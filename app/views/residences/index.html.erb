@@ -1,5 +1,4 @@
-<table class="table">
-	<thead>
+<!-- <table class="table"> 
 		<tr>
 			<th>NOMBRE</th>
 			<th>DESCRIPCION</th>
@@ -11,10 +10,34 @@
 				<td><%= r.name %></td>
 				<td><%= r.description %></td>
 				<td><%=link_to 'editar', edit_residence_path(r)%></td>
-				<td><%=link_to 'eliminar', r, method: :delete%></td>
+				<td><%=link_to 'eliminar', r, method: :delete%></td> 
 			</tr>
 		<% end %>
 	</tbody>
 </table>
 
-<%= link_to 'Nueva residencia', new_residence_path %>
+<%= link_to 'Nueva residencia', new_residence_path %> --> 
+
+<h2>Residencias</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th width="80%"> Nombre de la esidencia </th>
+			<th width="20%"> Lugar </th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+
+<tbody>
+	<% @residences.each do |residence| %>
+	<tr>
+		<td><%=residence.name %> </td>
+		<td><%=residence.description %></td>
+		<td><%=link_to 'Editar',edit_residence_path(@residences)%></td>
+		<td><%=link_to 'eliminar', @residence, method: :destroy%></td> 
+	</tr>
+	<% end %>
+</tbody>
+</table>
+<br>
