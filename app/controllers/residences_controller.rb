@@ -8,7 +8,7 @@ class ResidencesController < ApplicationController
 	end
 
 	def create #crea residencia
-		@residence = Residence.new(params.require(:residence).permit(:name, :description)) #pasar mas parametros
+		@residence = Residence.new(residence_params) #pasar mas parametros
 
 		if @residence.save
 			redirect_to residences_path, notice: 'Se creo la residencia correctamente'
@@ -17,15 +17,32 @@ class ResidencesController < ApplicationController
 		end
 	end
 
+	def edit
+		@residence = Residence.find(params[:id])
+	end
+
+	def update
+		@residence = Residence.find(params[:id])
+
+		if @residence.update(residence_params) #pasar mas parametros
+			redirect_to residences_path, notice: 'Se edito la residencia correctamente'
+		else
+			render :edit
+		end
+	end
+
 	def destroy
 		residence = Residence.find(params[:id])
 		if residence.destroy
-			redirect_to residences_path, notice: "La residencia fue eliminada"
+			redirect_to residences_path, notice: "La residencia '#{residence.name}' fue eliminada correctamente."
 		else
-			redirect_to residences_path, notice: "La residencia no fue eliminada"	
-		end
+			redirect_to residences_path, notice: "ERROR al eliminar la residencia '#{residence.name}'"	
+		end	
+	end
 
+	private
 
-		
+	def residence_params
+		params.require(:residence).permit(:name, :description)
 	end
 end
