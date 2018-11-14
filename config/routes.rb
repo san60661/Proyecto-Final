@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users
 
   get '/residencesPremium', to: 'residences#premium'
+
+  get '/usersResidences', to: 'users#residences'
 end
