@@ -40,9 +40,13 @@ class ResidencesController < ApplicationController
 		end	
 	end
 
+	def show
+		@residence = Residence.find(params[:id])
+	end
+
 	private
 
 	def residence_params
-		params.require(:residence).permit(:name, :description)
+		params.require(:residence).permit(:name, :description, :price, :location)
 	end
 end

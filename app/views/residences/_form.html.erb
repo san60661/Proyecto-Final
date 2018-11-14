@@ -9,6 +9,16 @@
     	<%= r.text_field :description, class: 'form-control', placeholder: 'Ingrese la descripcion de la residencia', required: true %>
   	</div>
 
+    <div class="form-group">
+      <%= r.label :price, 'Precio de la residencia' %>
+      <%= r.number_field :price, class: 'form-control', placeholder: 'Ingrese el precio de la residencia', required: true %>
+    </div>
+
+    <div class="form-group">
+      <%= r.label :location, 'Localidad de la residencia' %>
+      <%= r.text_field :location, class: 'form-control', placeholder: 'Ingrese la localidad de la residencia', required: true %>
+    </div>
+
   	<%= r.submit 'Guardar Residencia', class: 'btn btn-primary' %>
   	<%= link_to 'Volver', residences_path, class: 'btn btn-default' %>
 

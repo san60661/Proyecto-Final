@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  resources :residences
+  resources :residences #index new edit update destroy
 end
