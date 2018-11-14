@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head> 
+  	<h2>Home Switch Home</h2>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
       /* Email styles need to be inline */
@@ -8,6 +9,13 @@
   </head>
 
   <body>
+  	<tr>
+  		<td><%=link_to 'admin', residences_path, class: 'btn btn-info btn-sm' %></td>
+		<td><%=link_to 'premium',residencesPremium_path, class: 'btn btn-info btn-sm' %></td>
+
+
+  	</tr>
     <%= yield %>
+
   </body>
 </html>
