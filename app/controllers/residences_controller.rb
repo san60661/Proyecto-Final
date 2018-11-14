@@ -3,6 +3,10 @@ class ResidencesController < ApplicationController
 		@residences = Residence.all
 	end
 
+	def premium
+		@residences = Residence.all
+	end
+
 	def new
 		@residence = Residence.new #crea formulario de una nueva residencia
 	end
