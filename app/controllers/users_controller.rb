@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	def residences
-		@user = User.residences
+		u = User.create(name: "Santiago", category:"Premium")
+		u = User.residences
 	end
 
 	private
