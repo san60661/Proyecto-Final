@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	def residences
-		@users = User.residences
+		@user = User.residences
 	end
 
 	private

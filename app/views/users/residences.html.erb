@@ -1,4 +1,4 @@
-<h2>Residencias del usuario @users.name</h2>
+<h2>Residencias del usuario @user.name</h2>
 
 <table class="table">
 	<thead>
@@ -10,7 +10,7 @@
 	</thead>
 
 <tbody>
-	<% @users.residences.each do |residence| %>
+	<% @user.residences.each do |residence| %>
 	<tr>
 		<td><%=residence.name %> </td>
 		<td><%=residence.description %></td>
