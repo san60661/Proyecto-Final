@@ -1,3 +1,3 @@
-class Residence < ApplicationRecord
+class Residence < ActiveRecord::Base
 	belongs_to :user
 end
