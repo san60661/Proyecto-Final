@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 	def residences
-		u = User.create(name: "Santiago", category:"Premium")
+		u = User.find(1)
 		u = User.residences
 	end
 

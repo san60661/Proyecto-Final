@@ -15,7 +15,7 @@
 		<td><%=residence.name %> </td>
 		<td><%=residence.description %></td>
 		<td><%=link_to 'Ver', residence, method: :get, class: 'btn btn-info btn-sm' %></td>
-		<td><%=residence.user.submit, link_to 'Adjudicar', usersResidences_path, class: 'btn btn-info btn-sm' %></td>
+		<td><%=residence.user.submit 'Adjudicar', class: 'btn btn-info btn-sm' %></td>
 	</tr>
 	<% end %>
 </tbody>
