@@ -18,6 +18,15 @@
       <%= r.label :location, 'Localidad de la residencia' %>
       <%= r.text_field :location, class: 'form-control', placeholder: 'Ingrese la localidad de la residencia', required: true %>
     </div>
+<p></p>
+   
+      <div >
+        <%= r.label :image, 'Imagen (agregar la imagen por url)' %>
+          <%= r.text_field :image, class: 'form-control', required: true%>
+        </div>
+     
+
+      <p></p>
 
   	<%= r.submit 'Guardar Residencia', class: 'btn btn-primary' %>
   	<%= link_to 'Volver', residences_path, class: 'btn btn-default' %>
