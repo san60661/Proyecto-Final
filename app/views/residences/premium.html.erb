@@ -15,10 +15,11 @@
 		<td><%=residence.name %> </td>
 		<td><%=residence.description %></td>
 		<td><%=link_to 'Ver', residence, method: :get, class: 'btn btn-info btn-sm' %></td>
-		<td><%=residence.user.submit 'Adjudicar', class: 'btn btn-info btn-sm' %></td>
+		<%= residence.update(user_id: u.id)%>
+		<td><%=link_to 'Adjudicar', usersResidences_path, class: 'btn btn-info btn-sm' %></td> 
 	</tr>
 	<% end %>
 </tbody>
 </table>
-<%= link_to 'Nueva residencia', new_residence_path, class: 'btn btn-primary' %>
+<%= link_to 'Volver', residencesPremium_path, class: 'btn btn-default' %>
 <br>
