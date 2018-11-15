@@ -10,7 +10,7 @@
 	</thead>
 
 <tbody>
-	<% u.residences.each do |residence| %>
+	<% User.find(1).residences.each do |residence| %>
 	<tr>
 		<td><%=residence.name %> </td>
 		<td><%=residence.description %></td>

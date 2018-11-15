@@ -6,7 +6,7 @@ class ResidencesController < ApplicationController
 	def premium
 		@residences = Residence.all
 
-		u = User.find(1)
+		@u = User.find(1)
 	end
 
 	def new

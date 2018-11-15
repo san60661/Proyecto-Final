@@ -20,10 +20,13 @@ ActiveRecord::Schema.define(version: 2018_11_15_011639) do
     t.datetime "updated_at", null: false
     t.float "price"
     t.string "location"
-    t.index ["user_id"], name: "index_residences_on_user_id"
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'residences' for column 'residences'
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
