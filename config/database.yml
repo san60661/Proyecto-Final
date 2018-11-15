@@ -12,9 +12,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
+def: &def
+  adapter: sqlite3
+
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
 development:
-  <<: *default
-  database: bd_ProyectoFinal
+  <<: *def
+  database: bd_ProyectoFinal_sqlite
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
