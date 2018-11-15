@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   get '/residencesPremium', to: 'residences#premium'
 
   get '/usersResidences', to: 'users#residences'
+
+  get '/usersResidences2', to: 'residences#updateUser'
+
+  root 'residences#default'
 end
