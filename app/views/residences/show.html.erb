@@ -1,22 +1,39 @@
-<div class="container, p-3 mb-2 bg-primary text-white".bg-primary>
+<div class="container fluid, p-8 mb-8 bg-standard text-grey".bg-standard>
   <h1> <%= @residence.name %> </h1>
 
 </div>
+<body>
+<div class="container fluid">
+	<div class="row">
+		<div class="col-md-13">
+			<img src="<%= @residence.image%>" class="img-responsive img-thumbnail" alt="">
+		</div>
+	</div>
+</div>
 
-<div class="p-3 mb-2 bg-secondary text-white".bg-secondary>
-	<h3> <%= @residence.description %> </h3>
+<div class="container">
+	<section class="main row">
+		<article class="col-md-12 col-sm-8 col-md-9 col-lg-9 mb-2 bg-primary text-white".bg-secondary>
+			<p>
+			<h3> <%= @residence.description %> </h3>
+		</p>
+		</article>
+
+		<aside class="col-xs-12 col-sm-4 col-md-3 col-lg-3 p-3 mb-2 bg-secondary text-white".bg-secondary>
+			<p>
+				<h3> <%= "Precio" %> </h3>
+				<h5> <%= @residence.price%> </h5>
+			</p>
+		</aside>
+	</section>
+	<!-- <h3> <%= @residence.description %> </h3> -->
 </div>
 
 <div class="p-3 mb-2 bg-secondary text-white".bg-secondary>
-	<h3> <%= @residence.price%> </h3>
+	
+	<h3> <%= "Localidad: " %> <%= @residence.location %> </h3>
 </div>
-
-<div class="p-3 mb-2 bg-secondary text-white".bg-secondary>
-	<h3> <%= @residence.location %> </h3>
-</div>
-
-<img src= "<%= @residence.image%>">
-
+</body>
 <body style="background-color:#A9CBBC;"> <!-- color de fondo -->
 </body>
 
