@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
 
-  resources :residences #index new edit update destroy
+  devise_for :users
+  get 'home/index'
+	root to: "home#index"
 
-  resources :users
+	resources :residences #index new edit update destroy
 
-  get '/residencesPremium', to: 'residences#premium'
+	resources :users
 
-  get '/usersResidences', to: 'users#residences'
+	get '/residencesPremium', to: 'residences#premium'
 
-  get '/usersResidences2', to: 'residences#updateUser'
+	get '/usersResidences', to: 'users#residences'
 
-  root 'residences#default'
+	get '/usersResidences2', to: 'residences#updateUser'
 end
