@@ -1,34 +1,45 @@
 <%= form_for @residence do |r| %>
 	<div class="form-group">
-    	<%= r.label :name, 'Nombre de la residencia' %>
-    	<%= r.text_field :name, class: 'form-control', placeholder: 'Ingrese el nombre de la residencia', required: true %>
-  	</div>
+    <%= r.label :name, 'Nombre de la residencia' %>
+    <%= r.text_field :name, class: 'form-control', placeholder: 'Ingrese el nombre de la residencia', required: true %>
+  </div>
 
-  	<div class="form-group">
-    	<%= r.label :description, 'Descripcion de la residencia' %>
-    	<%= r.text_field :description, class: 'form-control', placeholder: 'Ingrese la descripcion de la residencia', required: true %>
-  	</div>
+  <div class="form-group">
+  	<%= r.label :description, 'Descripcion de la residencia' %>
+  	<%= r.text_field :description, class: 'form-control', placeholder: 'Ingrese la descripcion de la residencia', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= r.label :price, 'Precio de la residencia' %>
+    <%= r.number_field :price, class: 'form-control', placeholder: 'Ingrese el precio de la residencia', required: true, :greater_than => 0.0 %>
+  </div>
+
+  <div class="form-group">
+    <%= r.label :country, 'Pais de la residencia' %>
+    <%= r.text_field :country, class: 'form-control', placeholder: 'Ingrese el pais de la residencia', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= r.label :province, 'Provincia de la residencia' %>
+    <%= r.text_field :province, class: 'form-control', placeholder: 'Ingrese la provincia de la residencia', required: true %>
+  </div>
+
+  <div class="form-group">
+    <%= r.label :location, 'Localidad de la residencia' %>
+    <%= r.text_field :location, class: 'form-control', placeholder: 'Ingrese la localidad de la residencia', required: true %>
+  </div>
 
     <div class="form-group">
-      <%= r.label :price, 'Precio de la residencia' %>
-      <%= r.number_field :price, class: 'form-control', placeholder: 'Ingrese el precio de la residencia', required: true %>
-    </div>
-
-    <div class="form-group">
-      <%= r.label :location, 'Localidad de la residencia' %>
-      <%= r.text_field :location, class: 'form-control', placeholder: 'Ingrese la localidad de la residencia', required: true %>
-    </div>
-<p></p>
+    <%= r.label :home, 'Direccion de la residencia' %>
+    <%= r.text_field :home, class: 'form-control', placeholder: 'Ingrese la direccion de la residencia', required: true %>
+  </div>
    
-      <div >
-        <%= r.label :image, 'Imagen de la residencia' %>
-          <%= r.text_field :image, class: 'form-control', placeholder: 'Ingrese la localidad de la residencia', optional: true%>
-        </div>
-     
+  <div >
+    <%= r.label :image, 'Imagen de la residencia' %>
+    <%= r.text_field :image, class: 'form-control', placeholder: 'Ingrese la URL de la imagen de la residencia', optional: true%>
+  </div>
 
-      <p></p>
-
-  	<%= r.submit 'Guardar Residencia', class: 'btn btn-primary' %>
-  	<%= link_to 'Volver', residences_path, class: 'btn btn-default' %>
+	<%= r.submit 'Guardar Residencia', class: 'btn btn-primary' %>
+	<%= link_to 'Volver', residences_path, class: 'btn btn-default' %>
 
 <% end %>
