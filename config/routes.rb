@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
 	resources :residences #index new edit update destroy
 
-	resources :users
+	# resources :users, only: [:show]
+
+	get '/showUser', to: 'users#show'
 
 	get '/residencesPremium', to: 'residences#premium'
 
