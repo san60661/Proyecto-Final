@@ -18,20 +18,8 @@
 <body>
     <input id="datepicker" width="276" />
 
-    <script>
-        $('#datepicker').datepicker({
-        	format: 'dd/mm/yyyy',
-          	disableDaysOfWeek: [0, 2, 3, 4, 5, 6],
-          	header: true,
-          	footer: true,
-          	uiLibrary: 'bootstrap4',
-          	iconsLibrary: 'materialicons',
-          	weekStartDay: 1,
-          	minDate: function() {
-            	var date = new Date();
-            	return new Date(date.getFullYear(), date.getMonth()+6, date.getDate());
-        	}
-        });
-    </script>
+   	
+<input type="date" name="fecha" min="2019-06-01" max="2019-08-01" value="2019-06-01">
+
 </body>
 </html>
