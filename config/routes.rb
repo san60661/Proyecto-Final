@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations' }
   get 'home/index'
 	root to: "home#index"
 
 	resources :residences #index new edit update destroy
+
+	resources :auctions
+
+	resources :users
 
 	# resources :users, only: [:show]
 

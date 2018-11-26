@@ -1,0 +1,22 @@
+<h3> Establecer subasta </h3>
+
+<%= form_for @auction do |a| %>
+	<div class="form-group">
+		<%= a.label :date, 'Fecha de la subasta' %>
+		<%= a.date_field :date, class: 'form-control' %>
+	</div>
+
+	<div class="form-group">
+    	<%= a.label :initPrice, 'Valor inicial de la subasta' %>
+    	<%= a.number_field :initPrice, class: 'form-control', placeholder: 'Ingrese el valor inicial de la subasta', required: true, min: 0.0 %>
+	</div>
+
+	<div class="form-group">
+		<%= a.label :residence_id, 'Residencia' %>
+		<%= a.collection_select :residence_id, Residence.all, :id, :name, {}, class: 'form-control' %>
+	</div>
+
+  	<%= a.submit 'Guardar subasta', class: 'btn btn-primary' %>
+	<%= link_to 'Volver', residences_path, class: 'btn btn-default' %>
+
+<% end %>

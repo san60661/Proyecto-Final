@@ -1,0 +1,21 @@
+<h2>Usuarios</h2>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th width="80%"> Nombre del usuario </th>
+			<th width="20%"> Categoria </th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+
+<tbody>
+	<% @users.each do |user| %>
+	<tr>
+		<td><%=user.name %> </td>
+		<td><%=user.category %></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+<%= link_to 'Volver', root_path, class: 'btn btn-default' %>
