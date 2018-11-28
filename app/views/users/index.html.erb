@@ -4,7 +4,7 @@
 	<thead>
 		<tr>
 			<th width="80%"> Nombre del usuario </th>
-			<th width="20%"> Categoria </th>
+			<th width="20%"> Premium </th>
 			<th colspan="2"></th>
 		</tr>
 	</thead>
@@ -13,7 +13,14 @@
 	<% @users.each do |user| %>
 	<tr>
 		<td><%=user.name %> </td>
-		<td><%=user.category %></td>
+		<td><%=user.premium %></td>
+		<td><%=link_to 'Eliminar', user, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés eliminar el usuario #{user.email}?"} %></td> 
+		<%- if user.premium != true %>
+			<td><%=link_to 'Hacer usuario premium', updatePremium_path(:id => user.id), class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Premium?"} %></td>
+			<%-else  %>
+				<td><%=link_to 'Hacer usuario Normal', updateNormal_path(:id => user.id), class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Normal"} %></td>
+		<% end %>
+		<td><%=link_to 'Ver detalle', user, method: :get , class: 'btn btn-danger btn-sm' %></td>  
 	</tr>
 	<% end %>
 </tbody>

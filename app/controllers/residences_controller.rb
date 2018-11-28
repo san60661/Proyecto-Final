@@ -6,7 +6,7 @@ class ResidencesController < ApplicationController
 	def premium
 		@residences = Residence.all
 
-		@u = User.find(1)
+		@u = current_user
 	end
 
 	def new
@@ -35,16 +35,6 @@ class ResidencesController < ApplicationController
 			redirect_to residences_path, notice: 'Se edito la residencia correctamente'
 		else
 			render :edit
-		end
-	end
-
-	def updateUser
-		residence = Residence.find(params[:id])
-
-		if residence.update(user_id: 1)
-			redirect_to usersResidences_path, notice: "Se adjudico la residencia '#{residence.name}' correctamente"
-		else
-			redirect_to residencesPremium_path, notice: "ERROR al adjudicar la residencia '#{residence.name}'"
 		end
 	end
 

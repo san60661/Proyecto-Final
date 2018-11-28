@@ -10,13 +10,26 @@ Rails.application.routes.draw do
 
 	resources :users
 
-	# resources :users, only: [:show]
+	resources :reserves, only: [:new, :create]
 
-	get '/showUser', to: 'users#show'
+	get '/wantPremium', to: 'users#wantPremium'
+
+	get '/newReserve', to: 'reserves#newReserve' 
+
+	get '/information', to: 'home#information' 
+
+	get '/terms', to: 'home#terms'
+
+	get '/showUser', to: 'users#showUser'
 
 	get '/residencesPremium', to: 'residences#premium'
 
 	get '/usersResidences', to: 'users#residences'
 
 	get '/usersResidences2', to: 'residences#updateUser'
+
+	get '/updatePremium', to: 'users#updatePremium'
+
+	get '/updateNormal', to: 'users#updateNormal'
+
 end
