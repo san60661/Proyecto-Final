@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
 	get '/residencesPremium', to: 'residences#premium'
 
-	get '/usersResidences', to: 'users#residences'
+	get '/usersReserves', to: 'users#reserves'
 
 	get '/usersResidences2', to: 'residences#updateUser'
 

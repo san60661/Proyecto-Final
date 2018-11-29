@@ -1,4 +1,4 @@
-<h2>Residencias del usuario</h2>
+<h2>Reservas del usuario</h2>
 
 <table class="table">
 	<thead>
@@ -10,10 +10,10 @@
 	</thead>
 
 <tbody>
-	<% User.find(1).residences.each do |residence| %>
+	<% User.find(current_user.id).reserves.each do |reserve| %>
 	<tr>
-		<td><%=residence.name %> </td>
-		<td><%=residence.description %></td>
+		<td><%=Residence.find(reserve.residence_id).name %> </td>
+		<td><%=Residence.find(reserve.residence_id).description %></td>
 	</tr>
 	<% end %>
 </tbody>

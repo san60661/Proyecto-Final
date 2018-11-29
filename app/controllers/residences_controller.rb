@@ -15,7 +15,6 @@ class ResidencesController < ApplicationController
 
 	def create #crea residencia
 		@residence = Residence.new(residence_params) #pasar mas parametros
-		#@residence.user_id = 1
 
 		if @residence.save
 			redirect_to residences_path, notice: 'Se creo la residencia correctamente'

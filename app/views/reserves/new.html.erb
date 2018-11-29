@@ -2,13 +2,18 @@
 
 <%= form_for @reserve do |r| %>
 	<div class="form-group">
-    	<%= r.label :user_id, 'Usuario' %>
-    	<%= r.text_field :user_id, class: 'form-control', placeholder: current_user.email, data:{autocomplete_source: current_user.id}, required: true, disabled: true %>
+		<%= r.label :user_id, 'Usuario' %>
+		<%= r.select :user_id, [[current_user.name, current_user.id]] %>
 	</div>
 
 	<div class="form-group">
-    	<%= r.label :residence_id, 'Residencia' %>
-    	<%= r.text_field :residence_id, class: 'form-control', placeholder: @residence.name, data:{autocomplete_source: @residence.id}, required: true, disabled: true %>
+		<%= r.label :residence_id, 'Residencia' %>
+		<%= r.select :residence_id, [[@residence.name, @residence.id]] %>
+	</div>
+
+	<div class="form-group">
+		<%= r.label :date, 'Fecha de la subasta' %>
+		<%= r.date_field :date, class: 'form-control' %>
 	</div>
 
 	<%= r.submit 'Confirmar', class: 'btn btn-primary' %>
