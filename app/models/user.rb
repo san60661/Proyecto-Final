@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
 			:recoverable, :rememberable, :validatable
 
     has_many :auctions
-    has_many :reserves
+    has_many :reserves, class_name: "Reserve"
 end

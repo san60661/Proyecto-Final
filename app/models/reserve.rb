@@ -1,4 +1,4 @@
 class Reserve < ActiveRecord::Base
-	belongs_to :residence, optional: true
-	belongs_to :user, optional: true
+	belongs_to :residence, autosave: true
+	belongs_to :user, autosave: true
 end
