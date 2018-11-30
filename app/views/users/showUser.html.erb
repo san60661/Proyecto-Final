@@ -19,7 +19,7 @@
 				<% end %>	
 
 			</aside>
-			<%- if current_user.premium == false %>
+			<%- if current_user.premium != true %>
 					<td><%=link_to 'Quiero ser premium!', wantPremium_path, class: 'btn btn-danger btn-sm', data: { confirm: "¿Estás seguro que quieres solicitar ser premium?"} %></td>
 			 <% end %>  
 		</section>
