@@ -32,6 +32,15 @@ class UsersController < ApplicationController
 			redirect_to users_path, notice: 'ERROR al pasar el usuario a Premium'
 		end
 	end
+
+	def updateAdmin
+		if @user.update(admin: true)
+			redirect_to users_path, notice: 'El usuario ahora es admin'
+		else
+			redirect_to users_path, notice: 'ERROR al pasar el usuario a admin'
+		end
+	end
+
 	def updateNormal
 		@user = User.find(params[:id])
 
