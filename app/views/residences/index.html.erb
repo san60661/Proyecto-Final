@@ -23,7 +23,7 @@
        					<td><%=link_to 'Adjudicar', :controller => 'reserves', :action => 'new', :id => residence.id, class: 'btn btn-info btn-sm' %></td> 
        			<%-else  %>
        					<% if current_user != nil %>
-       						<td><%=link_to 'Ver subasta', auction_path(residence.id), class: 'btn btn-info btn-sm' %></td> 
+       						<td><%=link_to 'Inscripcion a subasta', :controller => 'inscriptions', :action => 'new', :id => residence.id, class: 'btn btn-info btn-sm' %></td> 
        					<% end %>  
        			<% end %>     
  		 <% end %>		

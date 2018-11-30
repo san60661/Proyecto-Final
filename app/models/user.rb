@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable,
 			:recoverable, :rememberable, :validatable
 
-    has_many :auctions
+	has_many :inscriptions
+    has_many :auctions, :through => :inscriptions
     has_many :reserves, class_name: "Reserve"
 end
