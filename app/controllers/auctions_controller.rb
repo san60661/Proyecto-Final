@@ -4,7 +4,7 @@ class AuctionsController < ApplicationController
 	end
 
 	def create #crea subasta
-		@auction = Auction.new(params.require(:auction).permit(:initPrice, :residence_id, :date)) #pasar mas parametros
+		@auction = Auction.new(params.require(:auction).permit(:initPrice, :date, :residence_id)) #pasar mas parametros
 
 		if @auction.save
 			redirect_to residences_path, notice: 'Se creo la subasta correctamente'
