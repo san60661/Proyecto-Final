@@ -13,23 +13,23 @@
           <%- if user_signed_in? %>
            <div class="col-1"> 
             <li class="nav-item">
-              <%= link_to 'Ver perfil' , showUser_path %> 
+              <%= link_to 'Ver perfil' , showUser_path, {:style=>"color:black"} %> 
             </li> </div>
             <div class="col-1"> 
             <li class="nav-item">
-              <%= link_to 'Editar usuario', edit_user_registration_path %>
+              <%= link_to 'Editar usuario', edit_user_registration_path, {:style=>"color:black"} %>
             </li> </div>
               <div class="col-1"> 
             <li class="nav-item">
-              <%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete %>
+              <%= link_to 'Cerrar sesion', destroy_user_session_path, { method: :delete, :style=>"color:black"} %>
             </li> </div>
           <% else %>
           <div class="col-1">
             <li class="nav-item">
-              <%= link_to 'Iniciar sesion', new_user_session_path %>
+              <%= link_to 'Iniciar sesion', new_user_session_path, {:style=>"color:black"} %>
             </li> </div>
              <div class="col-1"> 
-              <%= link_to 'Registrarme', new_user_registration_path %>
+              <%= link_to 'Registrarme', new_user_registration_path, {:style=>"color:black"} %>
              </div>
              <% end %>   </div>
 

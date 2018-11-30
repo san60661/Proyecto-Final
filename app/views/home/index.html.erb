@@ -2,11 +2,11 @@
 <h3> ¿Cómo desea ingresar a la página? </h3>
 <ul>
   <% if current_user.try(:admin?) %>
-      <li> <%= link_to "Ver listado de residencias", residences_path %></li>
-      <li> <%= link_to "Ver listado de usuarios", users_path %></li>
-      <li> <%= link_to "Establecer subasta", new_auction_path %></li>
+      <li> <%= link_to "Ver listado de residencias", residences_path,  {:style=>"color:black"} %></li>
+      <li> <%= link_to "Ver listado de usuarios", users_path,  {:style=>"color:black"} %></li>
+      <li> <%= link_to "Establecer subasta", new_auction_path,  {:style=>"color:black"} %></li>
   <%-else  %>
-            <li> <%= link_to "Ver listado de residencias", residences_path %></li>
+            <li> <%= link_to "Ver listado de residencias", residences_path,  {:style=>"color:black"} %></li>
 
          
   <% end %>
@@ -16,7 +16,8 @@
 
 <footer>
   <ul>
-     <li> <%= link_to "Terminos y condiciones   ", terms_path %> <%= link_to "    Informacion", information_path %></li>
+     <li> <%= link_to "Terminos y condiciones   ", terms_path,  {:style=>"color:black"} %> </li>
+      <li> <%= link_to "    Informacion", information_path,  {:style=>"color:black"} %></li>
   </ul>
 
 </footer>
