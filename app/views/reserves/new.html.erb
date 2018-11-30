@@ -13,9 +13,10 @@
 
 	<div class="form-group">
 		<%= r.label :date, 'Fecha de la subasta' %>
-		<%= r.date_field :date, class: 'form-control' %>
+		<%= r.week_field :date, class: 'form-control' %>
 	</div>
 
 	<%= r.submit 'Confirmar', class: 'btn btn-primary' %>
 	<%= link_to 'Volver', residencesPremium_path, class: 'btn btn-default' %>
+
 <% end %>
