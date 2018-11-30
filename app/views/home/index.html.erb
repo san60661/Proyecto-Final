@@ -4,6 +4,7 @@
   <% if current_user.try(:admin?) %>
       <li> <%= link_to "Ver listado de residencias", residences_path %></li>
       <li> <%= link_to "Ver listado de usuarios", users_path %></li>
+      <li> <%= link_to "Establecer subasta", new_auction_path %></li>
   <%-else  %>
             <li> <%= link_to "Ver listado de residencias", residences_path %></li>
 
