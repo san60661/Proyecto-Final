@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_193534) do
+ActiveRecord::Schema.define(version: 2018_12_03_202713) do
 
   create_table "assignments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 2018_12_03_193534) do
   end
 
   create_table "auctions", force: :cascade do |t|
-    t.date "date"
     t.integer "initPrice"
     t.integer "residence_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "date"
   end
 
   create_table "inscriptions", force: :cascade do |t|
@@ -36,11 +36,11 @@ ActiveRecord::Schema.define(version: 2018_12_03_193534) do
   end
 
   create_table "reserves", force: :cascade do |t|
-    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "residence_id"
+    t.text "date"
   end
 
   create_table "residences", force: :cascade do |t|
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 2018_12_03_193534) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
