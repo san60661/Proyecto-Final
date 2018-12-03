@@ -12,8 +12,7 @@
 	</div>
 
 	<div class="form-group">
-		<%= r.label :date, 'Fecha de la subasta' %>
-		<%= r.date_field :date, class: 'form-control' %>
+			<%= week_field("reserve", "date", min: Date.today + 180, max: Date.today + 250) %>
 	</div>
 
 	<%= r.submit 'Confirmar', class: 'btn btn-primary' %>
