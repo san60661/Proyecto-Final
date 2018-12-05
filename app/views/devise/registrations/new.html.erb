@@ -5,7 +5,7 @@
 
   <div class="field">
     <%= f.label :name, "Nombre" %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true %>
   </div>
   
   <div class="field">
@@ -24,6 +24,23 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "Nueva contraseña" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :card, "Numero de tarjeta(16 digitos)" %><br />
+    <%= f.number_field :card, autocomplete: "Numero" %>
+   </div>
+ 
+  
+  <div class="field">
+    <%= f.label :cvv, "Numero de Validacion(3 digitos)" %><br />
+    <%= f.number_field :cvv, autocomplete: "Numero"%>
+    </input>
+  </div>
+
+  <div class="field" >
+    <%= f.label :birth, "Fecha de nacimiento" %><br />
+    <%= f.date_field :birth, autocomplete: "Fecha de nacimiento" %>
   </div>
 
   <div class="actions">
