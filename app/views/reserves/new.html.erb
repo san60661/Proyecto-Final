@@ -11,8 +11,14 @@
 		<%= r.select :residence_id, [[@residence.name, @residence.id]] %>
 	</div>
 
+	<% a = [] %>
+	<% i = 0; %>
+	<% Residence.find(@residence.id).reserves.each do |reserve| %>
+		<% a[i] = reserve.date %>
+		<% i = i + 1 %>
+	<% end %>
 	<div class="form-group">
-		<%= week_field("reserve", "date", min: Date.today + 180, max: Date.today + 250) %>
+		<%= week_field("reserve", "date", options = { min: Date.today + 180, max: Date.today + 250 } ) %>
 	</div>
 
 	<%= r.submit 'Confirmar', class: 'btn btn-primary' %>

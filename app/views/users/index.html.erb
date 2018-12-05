@@ -20,7 +20,7 @@
 			<td><%=link_to 'Hacer usuario premium', updatePremium_path(:id => user.id), class: 'btn btn-success btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Premium?"} %></td>
 			<%-else  %>
 
-				<td><%= image_tag "m8edal.png", title: "Logo", class: "logo", height: '30'%></td>
+				<td><%= image_tag "medal.png", title: "Logo", class: "logo", height: '30'%></td>
 				<td><%=link_to 'Hacer usuario Normal', updateNormal_path(:id => user.id), class: 'btn btn-dark btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Normal"} %></td>
 		<% end %>
 		<td><%=link_to 'Ver detalle', user, method: :get , class: 'btn btn-secondary btn-sm' %></td>  

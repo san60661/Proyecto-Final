@@ -7,12 +7,7 @@
     <%= f.label :name, "Nombre" %><br />
     <%= f.text_field :name %>
   </div>
-
-  <div class="field">
-    <%= f.label :category, "Categoria" %><br />
-    <%= f.text_field :category, autocomplete: "Normal", disabled: true, placeholder: "Normal" %>
-  </div>
-
+  
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
