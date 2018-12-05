@@ -55,6 +55,7 @@ class UsersController < ApplicationController
 		redirect_to showUser_path, notice: 'Su solicitud fue enviada correctamente. Debe acercarse a las oficinas para completar el cambio a usuario premium'
 	end
 
+	
 	private
 	
 end
