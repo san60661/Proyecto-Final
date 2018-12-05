@@ -1,32 +1,35 @@
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand/logo -->
-  <a class="navbar-brand" href="#">
-    <%= link_to root_path, class: 'navbar-brand' do %>
-          <%= image_tag "HSH-Logo.png", title: "Logo", class: "logo" %>
+  <a class="navbar-brand" >
+    <%= link_to root_path, class: 'navbar-brand ' do %>
+          <%= image_tag "HSH-Logo.png", title: "Logo", class: "logo" %> 
+          <% end %>
+          <%= link_to root_path, class: 'navbar-brand' do %>
+          <%= image_tag "HSH-Text.png", title: "Logo", class: "logo" %> 
           <% end %>
   </a>
   
   <!-- Links -->
     <%- if user_signed_in? %>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav offset-md-2">
       <li class="nav-item">
-        <a class="nav-link" <%= link_to 'Ver perfil' , showUser_path %> </a>
+        <a class="nav-link btn btn-primary-outline my-2 my-sm-0" <%= link_to 'Ver perfil' , showUser_path %></button> </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" <%= link_to 'Editar usuario', edit_user_registration_path %> </a>
+        <a class="nav-link btn btn-primary-outline my-2 my-sm-0" <%= link_to 'Editar usuario', edit_user_registration_path %></button> </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" <%= link_to 'Cerrar sesion', destroy_user_session_path, { method: :delete} %> </a>
+        <a class="nav-link btn btn-primary-outline my-2 my-sm-0" <%= link_to 'Cerrar sesion', destroy_user_session_path, { method: :delete} %></button> </a>
       </li>
     </ul>
     <% else %>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav offset-md-2">
       <li class="nav-item">
-        <a class="nav-link" <%= link_to 'Iniciar sesion', new_user_session_path %> </a>
+        <a class="nav-link btn btn-primary-outline my-2 my-sm-0" <%= link_to 'Iniciar sesion', new_user_session_path %> </button></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" <%= link_to 'Registrarme', new_user_registration_path %> </a>
+      <li class="nav-item offset-sm-1">
+        <a class="nav-link btn btn-primary-primary my-2 my-sm-0" <%= link_to 'Registrarme', new_user_registration_path %> </button></a>
       </li>  
        <% end %>
   </ul>
