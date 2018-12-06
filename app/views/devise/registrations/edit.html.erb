@@ -31,6 +31,24 @@
     <%= f.password_field :current_password, autocomplete: "Contraseña actual" %>
   </div>
 
+ 
+   <div class="field">
+    <%= f.label :card, "Numero de tarjeta(16 digitos)" %><br />
+    <%= f.number_field :card, autocomplete: "Numero" %>
+   </div>
+ 
+  
+  <div class="field">
+    <%= f.label :cvv, "Numero de Validacion(3 digitos)" %><br />
+    <%= f.number_field :cvv, autocomplete: "cvv"%>
+    </input>
+  </div>
+
+  <div class="field" >
+    <%= f.label :birth, "Fecha de nacimiento" %><br />
+    <%= f.date_field :birth, autocomplete: "Fecha de nacimiento" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Actualizar" %>
   </div>

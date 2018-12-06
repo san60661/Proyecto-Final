@@ -1,20 +1,27 @@
-<h2>Residencias</h2>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th width="80%"> Nombre de la residencia </th>
-			<th width="20%"> Descripcion </th>
-			<th colspan="2"></th>
-		</tr>
-	</thead>
-
-<tbody>
-	<% @residences.each do |residence| %>
-	<tr>
-		<td><%=residence.name %> </td>
+<body>
+	<h1> </h1>
+	<h1> </h1>
+	<h1> </h1>
+	<h1> </h1>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripción</th>
+      <th scope="col"><span class="oi oi-eye"></span></th>
+      <th scope="col"><span class="oi oi-pencil"></span></th>
+      <th scope="col"> <span class="oi oi-trash"></span></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @residences.each do |residence| %>
+    <tr>
+		<td><%=  %> </td>
+      	<td><%=residence.name %> </td>
 		<td><%=residence.description %></td>
-		<td><%=link_to 'Ver', residence, method: :get, class: 'btn btn-info btn-sm' %></td>
+		 	<td><%=link_to 'Ver', residence, method: :get, class: 'btn btn-info btn-sm' %></td> 
 		<%- if current_user.try(:admin?) %>
 				<td><%=link_to 'Editar',edit_residence_path(residence), class: 'btn btn-info btn-sm' %></td>
 				<%- if residence.auctions.size == 0 && if residence.reserves.size == 0 %>
@@ -29,16 +36,15 @@
        						<td><%=link_to 'Inscripcion a subasta', :controller => 'inscriptions', :action => 'new', :id => residence.id, class: 'btn btn-info btn-sm' %></td> 
        					<% end %>  
        			<% end %>     
- 		 <% end %>		
-	</tr>
+ 		 <% end %>	
 
-	<% end %>
-</tbody>
+
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-<% if current_user.try(:admin?) %>
+ <td><%=link_to 'Volver', root_path, class: 'btn btn-secondary btn-sm' %></td>
+ <% if current_user.try(:admin?) %>
 			<%= link_to 'Nueva residencia', new_residence_path, class: 'btn btn-primary' %>
 	<% end %>
-<%= link_to 'Volver', root_path, class: 'btn btn-default' %>
-
-
-</html>
+ </body>
