@@ -48,11 +48,10 @@
     <%= f.label :birth, "Fecha de nacimiento" %><br />
     <%= f.date_field :birth, autocomplete: "Fecha de nacimiento" %>
   </div>
-
-  <div class="form-group" >
-    <%= f.label :expiration, "Fecha de Vencimiento" %><br />
-    <%= month_field :expiration, autocomplete: "Vencimiento" %>
+ <div class="form-group">
+    <%= month_field("user", "expiration") %>
   </div>
+
 
   <div class="actions">
     <%= f.submit "Actualizar" %>
