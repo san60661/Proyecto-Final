@@ -18,5 +18,19 @@ class User < ActiveRecord::Base
 			errors.add(:birth, "Debe ser mayor de 18 años")
 		end
 	end 
+	# validate :vencida
+	# def vencida
+	# 	now = Time.now.utc.to_date
+	# 	if (now.year == expiration.year)
+	# 		if (now.month < expiration.month)
+	# 			errors.add(:expiration, "La tarjeta esta vencida")
+	# 		end
+	# 	else
+	# 		if (now.year > expiration.year)
+	# 			errors.add(:expiration, "La tarjeta esta vencida")
+	# 		end
+	# 	end
+
+	# end
 end
 	

@@ -10,6 +10,7 @@
       <p class="card-text"><h3> Email:  <%= @user.email %> </h3></p>
       <p class="card-text"><h3> Tarjeta de Credito:  <%= @user.card %> </h3></p>
       <p class="card-text"><h3> codigo de seguridad :  <%= @user.cvv %> </h3></p>
+      <p class="card-text"><h3> Fecha de vencimiento :  <%= @user.expiration %> </h3></p>
     <p class="card-text"><h3> Categoria:  </h3></p>
 				<%-if @user.premium == true %>
 					<p class="card-text"><h3> Premium  </h3></p>
