@@ -1,21 +1,25 @@
-<h2>Usuarios</h2>
-
-<table class="table">
-	<thead>
-		<tr>
-			<th width="80%"> Nombre del usuario </th>
-			<th width="20%"> Premium </th>
-			<th colspan="2"></th>
-		</tr>
-	</thead>
-
-<tbody>
-	<% @users.each do |user| %>
-	<tr>
-		<td><%=user.name %> </td>
-		
-		 
-		<%- if user.premium != true %>
+<body>
+	<h1> </h1>
+	<h1> </h1>
+	<h1> </h1>
+	<h1> </h1>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Premium</th>
+      <th scope="col">Premium/Normal</th>
+      <th scope="col"><span class="oi oi-eye"></span></th>
+      <th scope="col"> <span class="oi oi-trash"></span></th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @users.each do |user| %>
+    <tr>
+	<td><%=  %> </td>
+      <td><%=user.name %> </td>
+      <%- if user.premium != true %>
 			<td><%=" " %></td>
 			<td><%=link_to 'Hacer usuario premium', updatePremium_path(:id => user.id), class: 'btn btn-warning btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Premium?"} %></td>
 			<%-else  %>
@@ -23,10 +27,11 @@
 				<td><%= image_tag "medal.png", title: "Logo", class: "logo", height: '30'%></td>
 				<td><%=link_to 'Hacer usuario Normal', updateNormal_path(:id => user.id), class: 'btn btn-dark btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Normal"} %></td>
 		<% end %>
-		<td><%=link_to 'Ver detalle', user, method: :get , class: 'btn btn-secondary btn-sm' %></td>  
-		<td><%=link_to 'Eliminar', user, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés eliminar el usuario #{user.email}?"} %></td>
-	</tr>
-	<% end %>
-</tbody>
+	 <td><%=link_to 'Ver detalle', user, method: :get , class: 'btn btn-secondary btn-sm' %></td>  
+	 <td><%=link_to 'Eliminar', user, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés eliminar el usuario #{user.email}?"} %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
-<%= link_to 'Volver', root_path, {:style=>"color:black", class: 'btn btn-default'} %>
+ <td><%=link_to 'Volver', root_path, class: 'btn btn-secondary btn-sm' %></td>
+ </body>

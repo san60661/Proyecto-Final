@@ -1,4 +1,4 @@
-en:
+es:
   activerecord:
     attributes:
       user:
@@ -25,6 +25,12 @@ en:
         unconfirmed_email: Email no confirmado
         unlock_token: Código de desbloqueo
         updated_at: Actualizado en
+        name: Nombre
+        last_name: Apellido
+        credit_card: Número de tarjeta de crédito
+        expiration_credit_card: Vencimiento de la tarjeta de crédito
+        cvv: CVV
+        birth_date: Fecha de nacimiento
     models:
       user:
         one: Usuario
@@ -143,4 +149,3 @@ en:
       not_saved:
         one: 'Ocurrió un error al tratar de guardar %{resource}:'
         other: 'Ocurrieron %{count} errores al tratar de guardar %{resource}:'
-        
