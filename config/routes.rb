@@ -40,6 +40,6 @@ Rails.application.routes.draw do
 
 	get '/indexAdmin', to: 'users#indexAdmin'
 
-
+	get '/logicalDelete', to: 'residences#logicalDelete'
 
 end

@@ -22,6 +22,7 @@
   <tbody>
   	<% @residences.each do |residence| %>
     <tr>
+		<%- if residence.locked != true %>
 		<td><%=  %> </td>
       	<td><%=residence.name %> </td>
 		<td><%=residence.description %></td>
@@ -30,6 +31,8 @@
 				<td><%=link_to 'Editar',edit_residence_path(residence), class: 'btn btn-info btn-sm' %></td>
 				<%- if residence.auctions.size == 0 && if residence.reserves.size == 0 %>
 					<td><%=link_to 'Eliminar', residence, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: '¿Realmente querés eliminar la residencia?'} %></td> 
+				<% else %>
+					<td><%=link_to 'Eliminar', :controller => 'residences', :action => 'logicalDelete', :id => residence.id, class: 'btn btn-danger btn-sm', data: { confirm: '¿Realmente querés eliminar la residencia?'} %></td>
 				<% end %> 
 				<% end %> 
 		<%-else  %>
@@ -40,8 +43,8 @@
        						<td><%=link_to 'Inscripcion a subasta', :controller => 'inscriptions', :action => 'new', :id => residence.id, class: 'btn btn-info btn-sm' %></td> 
        					<% end %>  
        			<% end %>     
- 		 <% end %>	
-
+ 		 <% end %>
+		<% end %>
 
     </tr>
     <% end %>

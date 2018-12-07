@@ -37,6 +37,16 @@ class ResidencesController < ApplicationController
 		end
 	end
 
+	def logicalDelete
+		residence = Residence.find(params[:id])
+
+		if residence.update(locked: true) #pasar mas parametros
+			redirect_to residences_path, notice: "La residencia '#{residence.name}' se borrará cuando las reservas y subastas finalicen"
+		else
+			redirect_to residences_path, notice: "ERROR al eliminar la residencia '#{residence.name}'"
+		end
+	end
+
 	def destroy
 		residence = Residence.find(params[:id])
 		if residence.destroy
