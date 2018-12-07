@@ -10,7 +10,7 @@
   
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true %>
   </div>
 
   <div class="field">
@@ -18,36 +18,35 @@
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> digitos como minimo)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "Nueva contraseña" %>
+    <%= f.password_field :password, autocomplete: "Contraseña", required: true %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "Nueva contraseña" %>
+    <%= f.password_field :password_confirmation, autocomplete: "Contraseña", required: true %>
   </div>
 
   <div class="field" >
     <%= f.label :birth, "Fecha de nacimiento" %><br />
-    <%= f.date_field :birth, autocomplete: "Fecha de nacimiento" %>
+    <%= f.date_field :birth, autocomplete: "Fecha de nacimiento", required: true %>
   </div>
 
    <div class="field">
     <%= f.label :card, "Numero de tarjeta" %> 
     <em>(16 digitos)</em><br />
-    <%= f.number_field :card, autocomplete: "Numero" %>
+    <%= f.number_field :card, autocomplete: "Numero", required: true %>
    </div>
  
   
   <div class="field">
     <%= f.label :cvv, "Numero de validacion" %>
     <em>(3 digitos)</em><br />
-    <%= f.number_field :cvv, autofocus: true, autocomplete: "number"%>
-    </input>
+    <%= f.number_field :cvv, autofocus: true, autocomplete: "Numero", required: true %>
   </div>
 
   <div class="form-group">
     <%= f.label :expiration, "Fecha de vencimiento"%><br/>
-    <%= month_field("user", "expiration") %>
+    <%= month_field("user", "expiration", options = { required: true } ) %>
   </div>
 
   <div class="actions">
