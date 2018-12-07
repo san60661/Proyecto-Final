@@ -21,15 +21,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "Confirmar contraseña" %><br />
+    <%= f.label :password_confirmation, "Confirmar nueva contraseña" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "Nueva contraseña" %>
   </div>
-
-  <div class="field">
-    <%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos tu contraseña actual para confimar los cambios)</i><br />
-    <%= f.password_field :current_password, autocomplete: "Contraseña actual" %>
-  </div>
-
  
   <div class="field" >
     <%= f.label :birth, "Fecha de nacimiento" %><br />
@@ -53,6 +47,11 @@
   <div class="form-group">
     <%= f.label :expiration, "Fecha de vencimiento"%><br/>
     <%= month_field("user", "expiration") %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos tu contraseña actual para confimar los cambios)</i><br />
+    <%= f.password_field :current_password, autocomplete: "Contraseña actual" %>
   </div>
 
   <div class="actions">
