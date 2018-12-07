@@ -12,8 +12,10 @@
       <th scope="col">Descripción</th>
       <th scope="col"><span class="oi oi-eye"></span></th>
       <th scope="col"><span class="oi oi-pencil"></span></th>
-      <th scope="col"> <span class="oi oi-trash"></span></th>
-    </tr>
+			<%- if current_user.try(:admin?) %>
+      	<th scope="col"> <span class="oi oi-trash"></span></th>
+			<% end %>
+		</tr>
   </thead>
   <tbody>
   	<% @residences.each do |residence| %>
