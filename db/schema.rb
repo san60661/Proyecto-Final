@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_07_133407) do
+=======
+ActiveRecord::Schema.define(version: 2018_12_07_130439) do
+>>>>>>> 74428e99c1de1ddb44d7d4d87a03ecefd123e02f
 
   create_table "assignments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -24,6 +28,16 @@ ActiveRecord::Schema.define(version: 2018_12_07_133407) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "date"
+  end
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "auction_id"
+    t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["auction_id"], name: "index_bids_on_auction_id"
+    t.index ["user_id"], name: "index_bids_on_user_id"
   end
 
   create_table "inscriptions", force: :cascade do |t|
