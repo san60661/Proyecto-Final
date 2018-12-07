@@ -13,11 +13,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password, "Contraseña" %> <i>(no completar si no desea cambiar la contraseña)</i><br />
-    <%= f.password_field :password, autocomplete: "Nueva contraseña" %>
+    <%= f.label :password, "Nueva contraseña" %> <i>(no completar si no desea cambiar la contraseña)</i>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> digitos como minimo)</em>
-    <% end %><br/>
+    <% end %><br>
+    <%= f.password_field :password, autocomplete: "Nueva contraseña" %>
   </div>
 
   <div class="field">
