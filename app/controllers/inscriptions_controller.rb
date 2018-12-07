@@ -12,7 +12,7 @@ class InscriptionsController < ApplicationController
 		else
 			redirect_to residences_path, notice: "ERROR al inscribirte a la subasta"
 		end
-    end
+  end
     
     private
 end

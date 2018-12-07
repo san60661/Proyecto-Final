@@ -16,9 +16,8 @@
     <%= f.label :password, "Contraseña" %> <i>(no completar si no desea cambiar la contraseña)</i><br />
     <%= f.password_field :password, autocomplete: "Nueva contraseña" %>
     <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> caracteres como mínimo</em>
-    <% end %>
+      <em>(<%= @minimum_password_length %> digitos como minimo)</em>
+    <% end %><br/>
   </div>
 
   <div class="field">
@@ -32,26 +31,29 @@
   </div>
 
  
+  <div class="field" >
+    <%= f.label :birth, "Fecha de nacimiento" %><br />
+    <%= f.date_field :birth, autocomplete: "Fecha de nacimiento" %>
+  </div>
+
    <div class="field">
-    <%= f.label :card, "Numero de tarjeta(16 digitos)" %><br />
+    <%= f.label :card, "Numero de tarjeta" %> 
+    <em>(16 digitos)</em><br />
     <%= f.number_field :card, autocomplete: "Numero" %>
    </div>
  
   
   <div class="field">
-    <%= f.label :cvv, "Numero de Validacion(3 digitos)" %><br />
-    <%= f.number_field :cvv, autocomplete: "cvv"%>
+    <%= f.label :cvv, "Numero de validacion" %>
+    <em>(3 digitos)</em><br />
+    <%= f.number_field :cvv, autofocus: true, autocomplete: "number"%>
     </input>
   </div>
 
-  <div class="field" >
-    <%= f.label :birth, "Fecha de nacimiento" %><br />
-    <%= f.date_field :birth, autocomplete: "Fecha de nacimiento" %>
-  </div>
- <div class="form-group">
+  <div class="form-group">
+    <%= f.label :expiration, "Fecha de vencimiento"%><br/>
     <%= month_field("user", "expiration") %>
   </div>
-
 
   <div class="actions">
     <%= f.submit "Actualizar" %>
