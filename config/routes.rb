@@ -34,4 +34,12 @@ Rails.application.routes.draw do
 
 	get '/updateNormal', to: 'users#updateNormal'
 
+	get '/updateAdmin', to: 'users#updateAdmin'
+
+	get '/outAdmin', to: 'users#outAdmin'
+
+	get '/indexAdmin', to: 'users#indexAdmin'
+
+
+
 end
