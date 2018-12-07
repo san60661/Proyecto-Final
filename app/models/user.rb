@@ -22,16 +22,16 @@ class User < ActiveRecord::Base
 	def vencida
 		now = Time.now.utc.to_date
 		#e=expiration.to_date
-		e=expiration[0..3].to_i
+		y=expiration[0..3].to_i
 		m=expiration[5..6].to_i
 		ny=now.year.to_i
 		nm=now.month.to_i
-		if (ny == e)
-			if (nm < m)
+		if (ny == y)
+			if (nm > m)
 				errors.add(:expiration, "La tarjeta esta vencida")
 			end
 		else
-			if (ny > e)
+			if (ny > y)
 				errors.add(:expiration, "La tarjeta esta vencida")
 			end
 		end
