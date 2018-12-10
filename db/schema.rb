@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_07_133407) do
-=======
-ActiveRecord::Schema.define(version: 2018_12_07_130439) do
->>>>>>> 74428e99c1de1ddb44d7d4d87a03ecefd123e02f
 
   create_table "assignments", force: :cascade do |t|
     t.datetime "created_at", null: false

@@ -40,10 +40,20 @@ class ResidencesController < ApplicationController
 	def logicalDelete
 		residence = Residence.find(params[:id])
 
-		if residence.update(locked: true) #pasar mas parametros
-			redirect_to residences_path, notice: "La residencia '#{residence.name}' se borrará cuando las reservas y subastas finalicen"
+		if residence.update(locked: true)
+			redirect_to residences_path, notice: "La residencia '#{residence.name}' fue bloqueada y los usuarios no podrán verla"
 		else
-			redirect_to residences_path, notice: "ERROR al eliminar la residencia '#{residence.name}'"
+			redirect_to residences_path, notice: "ERROR al bloquear la residencia '#{residence.name}'"
+		end
+	end
+
+	def logicalUpdate
+		residence = Residence.find(params[:id])
+
+		if residence.update(locked: false)
+			redirect_to residences_path, notice: "La residencia '#{residence.name}' fue desbloqueada y los usuarios ahora podrán verla"
+		else
+			redirect_to residences_path, notice: "ERROR al desbloquear la residencia '#{residence.name}'"
 		end
 	end
 

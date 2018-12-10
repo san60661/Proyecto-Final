@@ -1,0 +1,15 @@
+<% @residences.each do |residence| %>
+    <tr>
+    <td><%=residence.name %> </td>
+    <td><%=residence.description %></td>
+    <td><%=link_to 'Ver', residence, method: :get, class: 'btn btn-info btn-sm' %></td> 
+
+    <%- if current_user.try(:premium?) %>
+        <td><%=link_to 'Adjudicar', new_reserf_path(id: residence.id), class: 'btn btn-success btn-sm' %></td> 
+    <%-else  %>
+        <% if current_user != nil %>
+       	    <td><%=link_to 'Inscripcion a subasta', new_inscription_path(id: residence.id), class: 'btn btn-success btn-sm' %></td> 
+        <% end %>  
+    <% end %>     
+</tr>
+<% end %>

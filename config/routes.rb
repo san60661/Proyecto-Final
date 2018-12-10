@@ -42,4 +42,6 @@ Rails.application.routes.draw do
 
 	get '/logicalDelete', to: 'residences#logicalDelete'
 
+	get '/logicalUpdate', to: 'residences#logicalUpdate'
+
 end
