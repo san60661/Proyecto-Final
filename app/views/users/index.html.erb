@@ -1,11 +1,8 @@
 <% if !current_user.try(:admin?) %>
   <td><%=link_to 'Volver', root_path, class: 'btn btn-secondary btn-lg' %></td> 
-<%-else  %> 
-<body>
-	<h1> </h1>
-	<h1> </h1>
-	<h1> </h1>
-<table class="table table-striped table-dark">
+<%- else %>
+  <body>
+  <table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col"> </th>
@@ -19,30 +16,30 @@
   </thead>
   <tbody>
   	<% @users.each do |user| %>
-    <tr>
-	<td><%=  %> </td>
-      <td><%=user.name %> </td>
-      <%- if user.premium != true %>
-			<td><%=" " %></td>
-			<td><%=link_to 'Hacer usuario premium', updatePremium_path(:id => user.id), class: 'btn btn-warning btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Premium?"} %></td>
-			<%-else  %>
-
-				<td><%= image_tag "medal.png", title: "Logo", class: "logo", height: '30'%></td>
-				<td><%=link_to 'Hacer usuario Normal', updateNormal_path(:id => user.id), class: 'btn btn-dark btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Normal"} %></td>
-		<% end %>
-
-
-    <%- if user.admin!= true %>
-      <td><%=link_to 'Dar de alta Administrador', updateAdmin_path(:id => user.id), class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Administrador?"} %></td>
-      <%-else  %>
-        <td><%=link_to 'Dar de baja administrador', outAdmin_path(:id => user.id), class: 'btn btn-dark btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} deje de ser administrador?"} %></td>
-    <% end %>
-	 <td><%=link_to 'Ver detalle', user, method: :get , class: 'btn btn-secondary btn-sm' %></td>  
-	 <td><%=link_to 'Eliminar', user, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés eliminar el usuario #{user.email}?"} %></td>
-    </tr>
+      <tr>
+	      <td><%= %> </td>
+        <td><%=user.name %> </td>
+        <%- if user.premium != true %>
+			    <td><%=" " %></td>
+			    <td><%=link_to 'Hacer usuario premium', updatePremium_path(:id => user.id), class: 'btn btn-warning btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Premium?"} %></td>
+			  <%- else %>
+				  <td><%= image_tag "medal.png", title: "Logo", class: "logo", height: '30'%></td>
+				  <td><%=link_to 'Hacer usuario Normal', updateNormal_path(:id => user.id), class: 'btn btn-dark btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Normal"} %></td>
+		    <% end %>
+        <%- if user.admin!= true %>
+          <td><%=link_to 'Dar de alta Administrador', updateAdmin_path(:id => user.id), class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Administrador?"} %></td>
+        <%- else %>
+          <td><%=link_to 'Dar de baja administrador', outAdmin_path(:id => user.id), class: 'btn btn-dark btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} deje de ser administrador?"} %></td>
+        <% end %>
+	      <td><%=link_to 'Ver detalle', user, method: :get , class: 'btn btn-secondary btn-sm' %></td>
+        <%- if user.reserves.size == 0 && if user.auctions.size == 0 %>  
+	        <td><%=link_to 'Eliminar', user, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés eliminar el usuario #{user.email}?"} %></td>
+        <% end %>
+        <% end %>
+      </tr>
     <% end %>
   </tbody>
-</table>
- <td><%=link_to 'Volver', root_path, class: 'btn btn-secondary btn-sm' %></td>
- </body>
- <% end %> 
+  </table>
+  <td><%=link_to 'Volver', root_path, class: 'btn btn-secondary btn-sm' %></td>
+  </body>
+<% end %>
