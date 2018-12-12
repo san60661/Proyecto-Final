@@ -46,4 +46,6 @@ Rails.application.routes.draw do
 
 	get '/logicalUpdate', to: 'residences#logicalUpdate'
 
+	get '/endAuction', to: 'auctions#endAuction'
+
 end

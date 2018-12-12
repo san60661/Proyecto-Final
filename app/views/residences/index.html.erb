@@ -1,11 +1,10 @@
-
 <body>
 	<h1> </h1>
 	<h1> </h1>
 	<h1> </h1>
 	<h1> </h1>
-<table class="table table-striped table-dark">
-  <thead>
+	<table class="table table-striped table-dark">
+  	<thead>
     <tr>
       <th scope="col">Nombre</th>
       <th scope="col">Descripción</th>
@@ -17,17 +16,17 @@
       	<th scope="col"> <span class="oi oi-trash"></span></th>
 			<% end %>
 		</tr>
-  </thead>
-  <tbody>
-		<%- if current_user.try(:admin?) %>
-			<%= render  "admin" %>
-		<%-else  %>
-			<%= render  "user" %>
-		<% end %>
-  </tbody>
-</table>
- <td><%=link_to 'Volver', root_path, class: 'btn btn-secondary btn-sm' %></td>
- <% if current_user.try(:admin?) %>
-			<%= link_to 'Nueva residencia', new_residence_path, class: 'btn btn-primary' %>
+  	</thead>
+  	<tbody>
+			<%- if current_user.try(:admin?) %>
+				<%= render  "admin" %>
+			<%-else  %>
+				<%= render  "user" %>
+			<% end %>
+  	</tbody>
+	</table>
+ 	<td><%=link_to 'Volver', root_path, class: 'btn btn-secondary btn-sm' %></td>
+ 	<% if current_user.try(:admin?) %>
+		<%= link_to 'Nueva residencia', new_residence_path, class: 'btn btn-primary' %>
 	<% end %>
- </body>
+</body>

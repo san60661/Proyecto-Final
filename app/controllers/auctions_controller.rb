@@ -17,5 +17,9 @@ class AuctionsController < ApplicationController
 		@auction = Auction.find(params[:id])
 	end
 
+	def endAuction
+		@auction = Auction.find(params[:id])
+	end
+
 	private
 end
