@@ -13,7 +13,11 @@
 
     <div class="form-group">
         <%= r.label :price, 'Precio de puja' %>
-        <%= r.number_field :price, min: @auction.initPrice %>
+		<% if @auction.actualPrice != nil %>
+			<%= r.number_field :price, min: @auction.actualPrice %>
+		<% else %>
+        	<%= r.number_field :price, min: @auction.initPrice %>
+		<% end %>
     </div>
 
 	<%= r.submit 'Confirmar', class: 'btn btn-primary' %>
