@@ -10,6 +10,8 @@
         <% if current_user != nil %>
             <% if residence.auctions.size != 0 %>
        	        <td><%=link_to 'Inscripcion a subasta', new_inscription_path(id: residence.id), class: 'btn btn-success btn-sm' %></td>
+            <% else %>
+                <td><%=link_to 'No hay subastas', residences_path, class: 'btn btn-secondary btn-sm' %></td>
             <% end %>
         <% end %>
     <% end %>
