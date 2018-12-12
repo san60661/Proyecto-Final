@@ -10,7 +10,7 @@ class ReservesController < ApplicationController
 		if @reserve.save
 			redirect_to usersReserves_path, notice: "Se confirmo la reserva correctamente"
 		else
-			redirect_to residencesPremium_path, alert: "ERROR: La residencia ya está reservada en esa fecha"
+			redirect_to new_reserf_path(id: Residence.find(@reserve.residence_id).id), alert: "ERROR: La residencia ya está reservada en esa fecha"
 		end
 	end
 
