@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
 	resources :inscriptions, only: [:new, :create]
 
+	resources :bids
+
 	get '/wantPremium', to: 'users#wantPremium'
 
 	get '/newReserve', to: 'reserves#newReserve' 

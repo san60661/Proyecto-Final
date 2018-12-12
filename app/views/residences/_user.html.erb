@@ -8,8 +8,10 @@
         <td><%=link_to 'Adjudicar', new_reserf_path(id: residence.id), class: 'btn btn-success btn-sm' %></td> 
     <%-else  %>
         <% if current_user != nil %>
-       	    <td><%=link_to 'Inscripcion a subasta', new_inscription_path(id: residence.id), class: 'btn btn-success btn-sm' %></td> 
-        <% end %>  
-    <% end %>     
+            <% if residence.auctions.size != 0 %>
+       	        <td><%=link_to 'Inscripcion a subasta', new_inscription_path(id: residence.id), class: 'btn btn-success btn-sm' %></td>
+            <% end %>
+        <% end %>
+    <% end %>
 </tr>
 <% end %>

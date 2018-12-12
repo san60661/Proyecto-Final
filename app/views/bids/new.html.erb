@@ -1,0 +1,22 @@
+<h3> Puja de subasta </h3>
+
+<%= form_for @bid do |r| %>
+	<div class="form-group">
+		<%= r.label :user_id, 'Usuario' %>
+		<%= r.select :user_id, [[current_user.name, current_user.id]] %>
+	</div>
+
+	<div class="form-group">
+		<%= r.label :auction_id, 'Residencia que está siendo subastada' %>
+		<%= r.select :auction_id, [[Residence.find(@auction.residence_id).name, @auction.id]] %>
+	</div>
+
+    <div class="form-group">
+        <%= r.label :price, 'Precio de puja' %>
+        <%= r.number_field :price, min: @auction.initPrice %>
+    </div>
+
+	<%= r.submit 'Confirmar', class: 'btn btn-primary' %>
+	<%= link_to 'Volver', residences_path, class: 'btn btn-default' %>
+
+<% end %>

@@ -1,7 +1,7 @@
 <h3> Inscripcion a subasta </h3>
 
 <%= form_for @inscription do |r| %>
-	<div class="form-group">
+	<div class="form-group invisible">
 		<%= r.label :user_id, 'Usuario' %>
 		<%= r.select :user_id, [[current_user.name, current_user.id]] %>
 	</div>
