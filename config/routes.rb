@@ -10,11 +10,13 @@ Rails.application.routes.draw do
 
 	resources :users
 
-	resources :reserves, only: [:new, :create]
+	resources :reserves
 
 	resources :inscriptions, only: [:new, :create]
 
 	resources :bids
+
+	resources :hotsales
 
 	get '/wantPremium', to: 'users#wantPremium'
 
@@ -49,4 +51,6 @@ Rails.application.routes.draw do
 	get '/endAuction', to: 'auctions#endAuction'
 
 	get '/destroyAuction', to: 'auctions#destroyAuction'
+
+	get '/reserveHotSale', to: 'hotsales#reserveHotSale'
 end

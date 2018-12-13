@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_12_13_204307) do
+=======
+ActiveRecord::Schema.define(version: 2018_12_13_202805) do
+>>>>>>> 0fbc7e2f5d5bd035fb80079bd7a3e10df3054d81
 
   create_table "assignments", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -37,6 +41,15 @@ ActiveRecord::Schema.define(version: 2018_12_13_204307) do
     t.datetime "updated_at", null: false
     t.index ["auction_id"], name: "index_bids_on_auction_id"
     t.index ["user_id"], name: "index_bids_on_user_id"
+  end
+
+  create_table "hotsales", force: :cascade do |t|
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "residence_id"
+    t.string "description"
+    t.string "date"
   end
 
   create_table "inscriptions", force: :cascade do |t|
