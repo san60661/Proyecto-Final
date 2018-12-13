@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
 	resources :bids
 
+	resources :hotsales
+
 	get '/wantPremium', to: 'users#wantPremium'
 
 	get '/newReserve', to: 'reserves#newReserve' 
