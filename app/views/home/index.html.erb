@@ -1,5 +1,4 @@
 <h1> Bienvenido a Home Switch Home </h1>
-<h3> ¿Cómo desea ingresar a la página? </h3>
 <ul>
   <% if current_user.try(:admin?) %>
       <li> <%= link_to "Ver listado de residencias", residences_path,  {:style=>"color:black"} %></li>
