@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
 	resources :users
 
-	resources :reserves, only: [:new, :create]
+	resources :reserves
 
 	resources :inscriptions, only: [:new, :create]
 
