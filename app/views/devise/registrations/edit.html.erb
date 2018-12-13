@@ -52,6 +52,11 @@
     <%= f.label :expiration, "Fecha de vencimiento"%><br/>
     <%= month_field("user", "expiration", options = { value: current_user.expiration } ) %>
   </div>
+    <div >
+    <%= f.label :image, 'Foto' %>
+    <%= f.text_field :image, class: 'form-control', placeholder: 'Ingrese la URL de su foto/avatar', optional: true%>
+  </div>
+
 
   <div class="field">
     <%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos tu contraseña actual para confimar los cambios)</i><br />

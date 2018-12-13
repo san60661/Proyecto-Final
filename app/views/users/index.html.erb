@@ -7,7 +7,7 @@
     <tr>
       <th scope="col"> </th>
       <th scope="col"> N°</th>
-      <th scope="col">Nombre</th>
+      <th scope="col">Nombre y apellido</th>
       <th scope="col">Premium</th>
       <th scope="col">Pasar a Premium/Normal</th>
       <th scope="col">Administrador</th>
@@ -22,7 +22,7 @@
         <% i = i + 1 %>
         <td><%= %> </td>
 	      <td> <%= i %> </td>
-        <td><%=user.name %> </td>
+        <td><%=user.name %> <%=user.surname %> </td>
         <%- if user.premium != true %>
 			    <td><%=" " %></td>
 			    <td><%=link_to 'Hacer usuario premium', updatePremium_path(:id => user.id), class: 'btn btn-warning btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} sea Premium?"} %></td>

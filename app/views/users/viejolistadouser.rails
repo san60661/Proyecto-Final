@@ -30,3 +30,5 @@
 </tbody>
 </table>
 <%= link_to 'Volver', root_path, {:style=>"color:black", class: 'btn btn-default'} %>
+
+ <img class="card-img-top" src="http://universoguia.com/wp-content/uploads/2009/11/msn.png" alt="Card image" 

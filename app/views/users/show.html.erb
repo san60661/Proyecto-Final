@@ -3,9 +3,14 @@
 <div class="container-fluid">
   <h1> </h1>
    <div class="card" style=" width:700px; background:#346C81">
+   <%- if @user.image == nil %>
     <img class="card-img-top" src="http://universoguia.com/wp-content/uploads/2009/11/msn.png" alt="Card image" style="width:100%">
+    <%-else  %>
+      <img class="card-img-top" src="<%= @user.image%>" alt="Card image" style="width:100%">
+     <% end %>
     <div class="card-body">
-      <h1 class="card-title"><%= @user.name %></h1>
+      <h1 class="card-title"><%= @user.name @user.surname%> </h1>
+      <p class="card-text"><h3> Email:  <%= @user.surname %></h3></p>
       <p class="card-text"><h3> Email:  <%= @user.email %> </h3></p>
     <p class="card-text"><h3> Categoria:  </h3></p>
 				<%-if @user.premium == true %>
@@ -23,3 +28,9 @@
 </div>
 
 </body>
+
+<%- if @user.image == nil %>
+    <img class="card-img-top" src="http://universoguia.com/wp-content/uploads/2009/11/msn.png" alt="Card image" style="width:100%">
+    <%-else  %>
+      <img class="card-img-top" src="<%= @user.image%>" alt="Card image" style="width:100%">
+     <% end %>

@@ -7,6 +7,11 @@
     <%= f.label :name, "Nombre" %><br />
     <%= f.text_field :name, required: true %>
   </div>
+
+  <div class="field">
+    <%= f.label :surname, "Apellido" %><br />
+    <%= f.text_field :surname, required: true %>
+  </div>
   
   <div class="field">
     <%= f.label :email %><br />
@@ -46,6 +51,11 @@
   <div class="form-group">
     <%= f.label :expiration, "Fecha de vencimiento"%><br/>
     <%= month_field("user", "expiration", options = { required: true } ) %>
+  </div>
+
+  <div >
+    <%= f.label :image, 'Foto' %>
+    <%= f.text_field :image, class: 'form-control', placeholder: 'Ingrese la URL de su foto/avatar', optional: true%>
   </div>
 
   <div class="actions">
