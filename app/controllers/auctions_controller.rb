@@ -19,6 +19,27 @@ class AuctionsController < ApplicationController
 
 	def endAuction
 		@auction = Auction.find(params[:id])
+
+		user = User.find(@auction.user_id)
+		if user.credits > 0
+			redirect_to destroyAuction_path(id: @auction.id)
+		else
+			redirect_to auction_path(id: @auction.id), notice: 'El usuario no tiene créditos para efectuar la reserva'
+		end
+	end
+
+	def destroyAuction
+		auction = Auction.find(params[:id])
+
+		user = User.find(auction.user_id)
+		if auction.destroy
+			user.update(credits: user.credits-1)
+			r = Reserve.new(user_id: user.id, residence_id: auction.residence_id, date: auction.date.to_date)
+			r.save
+			redirect_to root_path, notice: 'La subasta fue finalizada correctamente'
+		else
+			redirect_to auction_path(id: @auction.id), notice: 'ERROR: No pudo finalizar la subasta correctamente'
+		end
 	end
 
 	private
