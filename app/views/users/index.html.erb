@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th scope="col"> </th>
+      <th scope="col"> N°</th>
       <th scope="col">Nombre</th>
       <th scope="col">Premium</th>
       <th scope="col">Pasar a Premium/Normal</th>
@@ -15,9 +16,12 @@
     </tr>
   </thead>
   <tbody>
+    <% i = 0; %>
   	<% @users.each do |user| %>
       <tr>
-	      <td><%= %> </td>
+        <% i = i + 1 %>
+        <td><%= %> </td>
+	      <td> <%= i %> </td>
         <td><%=user.name %> </td>
         <%- if user.premium != true %>
 			    <td><%=" " %></td>

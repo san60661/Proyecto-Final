@@ -5,7 +5,12 @@
     <td><%=link_to 'Ver', residence, method: :get, class: 'btn btn-info btn-sm' %></td> 
 
     <%- if current_user.try(:premium?) %>
+        <% if current_user.credits != 0 %>
         <td><%=link_to 'Adjudicar', new_reserf_path(id: residence.id), class: 'btn btn-success btn-sm' %></td> 
+        <% else %>
+        <td><%=link_to 'No posee creditos', residences_path, class: 'btn btn-secondary btn-sm' %></td>
+        <% end %>
+
     <%-else  %>
         <% if current_user != nil %>
             <% if residence.auctions.size != 0 %>

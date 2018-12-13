@@ -12,11 +12,11 @@
       <p class="card-text"><h3> Tarjeta de Credito:  <%= @user.card %> </h3></p>
       <p class="card-text"><h3> codigo de seguridad :  <%= @user.cvv %> </h3></p>
       <p class="card-text"><h3> Fecha de vencimiento :  <%= @user.expiration %> </h3></p>
-    <p class="card-text"><h3> Categoria:  </h3></p>
+      <p class="card-text"><h3> Creditos:  <%= @user.credits %> </h3></p> 
 				<%-if @user.premium == true %>
-					<p class="card-text"><h3> Premium  </h3></p>
+					 <p class="card-text"><h3> Categoria:  Premium  </h3></p>
 				<%-else  %>
-					<p class="card-text"><h3> Normal  </h3></p>
+				<p class="card-text"><h3> Categoria:  Normal  </h3></p>
 				<% end %>	
 
 			</aside>
