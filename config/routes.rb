@@ -51,4 +51,6 @@ Rails.application.routes.draw do
 	get '/endAuction', to: 'auctions#endAuction'
 
 	get '/destroyAuction', to: 'auctions#destroyAuction'
+
+	get '/reserveHotSale', to: 'hotsales#reserveHotSale'
 end

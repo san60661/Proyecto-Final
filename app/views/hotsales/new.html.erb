@@ -15,6 +15,12 @@
   	<%= h.label :description, 'Descripcion del hot sale' %>
   	<%= h.text_field :description, class: 'form-control', placeholder: 'Ingrese la descripcion del hot sale', required: true %>
   	</div>
+
+  	<div class="form-group">
+		<%= h.label :date, 'Fecha de semana en hot sale' %></br>
+		<%= week_field("hotsale", "date", min: Date.today, max: Date.today + 180, required: true)%>
+	</div>
+
   	<%= h.submit 'Guardar hot sale', class: 'btn btn-primary' %>
 	<%= link_to 'Volver', root_path, class: 'btn btn-secondary btn-sm' %>
 

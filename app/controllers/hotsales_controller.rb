@@ -1,6 +1,6 @@
 class HotsalesController < ApplicationController
 	def index
-		@hotsales = Hotsales.all
+		@hotsales = Hotsale.all
 	end
 
 
@@ -12,10 +12,10 @@ class HotsalesController < ApplicationController
 
 	def create
 	
-	@hotsale = Hotsale.new(hotsale_params)
+		@hotsale = Hotsale.new(params.require(:hotsale).permit(:price, :date, :residence_id, :description))
 
 		if @hotsale.save
-			redirect_to hotsales_path, notice: 'Se creo el Hot Sale correctamente'
+			redirect_to root_path, notice: 'Se creo el Hot Sale correctamente'
 		else
 			render :new
 		end
@@ -29,6 +29,24 @@ class HotsalesController < ApplicationController
 		else
 			redirect_to hotsales_path, notice: "ERROR al eliminar la residencia '#{hotsale.residence.name}'"	
 		end	
+	end
+
+	def show
+		@hotsale = Hotsale.find(params[:id])
+		@residence = Residence.find(@hotsale.residence_id)
+	end
+
+	def reserveHotSale
+		hotsale = Hotsale.find(params[:id])
+		user = User.find(current_user.id)
+		residence = Residence.find(hotsale.residence_id)
+		if hotsale.destroy
+			r = Reserve.new(user_id: user.id, residence_id: residence.id, date: hotsale.date)
+			r.save
+			redirect_to root_path, notice: 'La reserva se hizo correctamente'
+		else
+			redirect_to hotsale_path(id: hotsale.id), notice: 'ERROR: No pudo reservarse correctamente'
+		end
 	end
 
 end
