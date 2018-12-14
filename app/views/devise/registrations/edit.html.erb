@@ -12,6 +12,7 @@
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <h1></h1>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,60 +20,63 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password, "Nueva contraseña" %> <i>(no completar si no desea cambiar la contraseña)</i>
+    <%= f.label :password, "Nueva contraseña" %> <i>(si desea cambiar la contraseña)</i>
     <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> digitos como minimo)</em>
     <% end %><br>
     <%= f.password_field :password, autocomplete: "Nueva contraseña" %>
+    <h1></h1>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation, "Confirmar nueva contraseña" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "Nueva contraseña" %>
-  </div>
- 
-  <div class="field" >
-    <%= f.label :birth, "Fecha de nacimiento" %><br />
-    <%= f.date_field :birth, autocomplete: "Fecha de nacimiento" %>
+    <h1></h1>
   </div>
 
    <div class="field">
     <%= f.label :card, "Numero de tarjeta" %> 
     <em>(16 digitos)</em><br />
     <%= f.number_field :card, autocomplete: "Numero" %>
+    <h1></h1>
    </div>
   
   <div class="field">
     <%= f.label :cvv, "Numero de validacion" %>
     <em>(3 digitos)</em><br />
     <%= f.number_field :cvv, autofocus: true, autocomplete: "Numero" %>
+    <h1></h1>
   </div>
 
   <div class="form-group">
     <%= f.label :expiration, "Fecha de vencimiento"%><br/>
     <%= month_field("user", "expiration", options = { value: current_user.expiration } ) %>
+    <h1></h1>
   </div>
     <div >
     <%= f.label :image, 'Foto' %>
     <%= f.text_field :image, class: 'form-control', placeholder: 'Ingrese la URL de su foto/avatar', optional: true%>
+    <h1></h1>
   </div>
 
 
   <div class="field">
     <%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos tu contraseña actual para confimar los cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "Contraseña actual" %>
+    <h1></h1>
   </div>
 
   <div class="actions">
     <%= f.submit "Actualizar" %>
+    <h1></h1>
   </div>
 <% end %>
-
+</br>
 <h3>Cancelar mi cuenta</h3>
 
-<p> <%= button_to "Cerrar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete %></p>
+<p> <%= button_to "Cerrar mi cuenta", registration_path(resource_name), data: { confirm: "Estas seguro?" }, method: :delete , class: 'btn btn-danger btn-sm' %></p>
 
-<%= link_to "Volver", :back %>
+<%= link_to "Volver", :back , class: 'btn btn-secondary btn-sm' %>
 
 </aside>
   </div>

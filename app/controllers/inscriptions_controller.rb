@@ -10,7 +10,7 @@ class InscriptionsController < ApplicationController
 		if @inscription.save
 			redirect_to residences_path, notice: "Se inscribio a la subasta correctamente"
 		else
-			redirect_to residences_path, notice: "ERROR al inscribirte a la subasta"
+			redirect_to residences_path, notice: "ERROR ya esta inscripto en esa subasta"
 		end
   end
     

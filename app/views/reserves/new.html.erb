@@ -18,7 +18,7 @@
 		<%= week_field("reserve", "date", options = { min: Date.today + 180, max: Date.today + 250 } ) %>
 	</div>
 
-	<%= r.submit 'Confirmar', class: 'btn btn-primary' %>
-	<%= link_to 'Volver', residencesPremium_path, class: 'btn btn-default' %>
+	<%= r.submit 'Confirmar', class: 'btn btn-primary', data: { confirm: "¿Realmente querés adjudicarte la residencia #{@residence.name} ?"} %></td>
+	<%= link_to 'Volver', residencesPremium_path, class: 'btn btn-secondary' %>
 
 <% end %>

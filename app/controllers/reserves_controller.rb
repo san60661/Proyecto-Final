@@ -13,7 +13,7 @@ class ReservesController < ApplicationController
 
 		if @reserve.save
 			User.find(current_user.id).update(credits: current_user.credits-1)
-			redirect_to usersReserves_path, notice: "Se confirmo la reserva correctamente"
+			redirect_to reserves_path, notice: "Se confirmo la reserva correctamente"
 		else
 			redirect_to new_reserf_path(id: Residence.find(@reserve.residence_id).id), alert: "ERROR: La residencia ya está reservada en esa fecha"
 		end

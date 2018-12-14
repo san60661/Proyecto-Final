@@ -17,7 +17,7 @@ class HotsalesController < ApplicationController
 		if @hotsale.save
 			redirect_to root_path, notice: 'Se creo el Hot Sale correctamente'
 		else
-			render :new
+			redirect_to new_hotsale_path, notice: 'Ya hay un Hot Sale para esa residencia en esa fecha'
 		end
 
 	end

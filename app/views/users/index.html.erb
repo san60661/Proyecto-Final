@@ -19,6 +19,7 @@
     <% i = 0; %>
   	<% @users.each do |user| %>
       <tr>
+        <% if user != current_user %>
         <% i = i + 1 %>
         <td><%= %> </td>
 	      <td> <%= i %> </td>
@@ -36,8 +37,11 @@
           <td><%=link_to 'Dar de baja administrador', outAdmin_path(:id => user.id), class: 'btn btn-dark btn-sm', data: { confirm: "¿Realmente querés que el usuario #{user.email} deje de ser administrador?"} %></td>
         <% end %>
 	      <td><%=link_to 'Ver detalle', user, method: :get , class: 'btn btn-secondary btn-sm' %></td>
-        <%- if user.reserves.size == 0 && if user.auctions.size == 0 %>  
-	        <td><%=link_to 'Eliminar', user, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés eliminar el usuario #{user.email}?"} %></td>
+        <%- if user.reserves.size == 0 &&  user.auctions.size == 0 %>  
+	        
+          <td><%=link_to 'Eliminar', user, method: :delete, class: 'btn btn-danger btn-sm', data: { confirm: "¿Realmente querés eliminar el usuario #{user.email}?"} %></td>
+          <% else %>
+          <td><%=link_to 'Tiene subastas/reservas', users_path, class: 'btn btn-secondary btn-sm' %></td>
         <% end %>
         <% end %>
       </tr>

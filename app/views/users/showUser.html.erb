@@ -4,7 +4,7 @@
 <div class="container-fluid">
   <h1> </h1>
   <div class="card" style=" width:700px; background:#346C81">
-    <%- if current_user.image == nil %>
+    <%- if current_user.image == nil %>+
     <img class="card-img-top" src="http://universoguia.com/wp-content/uploads/2009/11/msn.png" alt="Card image" style="width:100%">
     <%-else  %>
       <img class="card-img-top" src="<%= @current_user.image%>" alt="Card image" style="width:100%">
