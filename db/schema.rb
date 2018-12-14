@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2018_12_13_204307) do
     t.datetime "remember_created_at"
     t.boolean "premium"
     t.boolean "admin"
-    t.integer "card"
+    t.string "card"
     t.integer "cvv"
     t.date "birth"
     t.text "expiration"

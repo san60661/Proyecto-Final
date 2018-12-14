@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
 	end
 	validate :tarjeta
 	def tarjeta
-		if card.digits.length != 8
+		if card.length != 16
 			errors.add(:base, "El numero de la tarjeta debe tener 16 digitos")
 		end
 	end
