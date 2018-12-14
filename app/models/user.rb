@@ -27,12 +27,6 @@ class User < ActiveRecord::Base
 			errors.add(:base, "El cvv debe tener 3 digitos")
 		end
 	end
-	validate :tarjeta
-	def tarjeta
-		if card.length != 16
-			errors.add(:base, "El numero de la tarjeta debe tener 16 digitos")
-		end
-	end
 
 	validate :vencida
 	def vencida
