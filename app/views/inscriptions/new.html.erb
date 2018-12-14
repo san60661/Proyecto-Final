@@ -1,12 +1,15 @@
-<h3> Inscripcion a subasta </h3>
+<h1> <div class="p-3 mb-2 bg-primary text-white".bg-standard> Inscripcion a subasta </div> </h1>
 
 <%= form_for @inscription do |r| %>
+
+	<h3> <div class="p-3 mb-2 bg-secondary text-white".bg-secondary> Usuario: <%= current_user.name %> </div> </h3>
+
 	<div class="form-group invisible">
 		<%= r.label :user_id, 'Usuario' %>
 		<%= r.select :user_id, [[current_user.name, current_user.id]] %>
 	</div>
 
-	<div class="form-group">
+	<div class="p-3 mb-2 bg-secondary text-white".bg-secondary>
 		<%= r.label :auction_id, 'Fecha de la subasta' %>
 		<%= r.collection_select :auction_id, Residence.find(@residence.id).auctions, :id, :date, {}, class: 'form-control' %>
 	</div>
