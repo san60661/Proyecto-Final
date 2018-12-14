@@ -1,22 +1,19 @@
-<h3> Confirmar reserva de residencia </h3>
+<h1> <span class="badge badge-light"> Confirmar reserva de residencia </span> </h1>
 
 <%= form_for @reserve do |r| %>
-	<div class="form-group">
-		<%= r.label :user_id, 'Usuario' %>
-		<%= r.select :user_id, [[current_user.name, current_user.id]] %>
-	</div>
+	
+	<h3> <span class="badge badge-light"> Usuario: <%= current_user.name %> </span> </h3>
 
-	<div class="form-group">
-		<%= r.label :residence_id, 'Residencia' %>
+	<div class="form-group invisible">
 		<%= r.select :residence_id, [[@residence.name, @residence.id]] %>
 	</div>
 
-	<% a = [] %>
-	<% i = 0; %>
-	<% Residence.find(@residence.id).reserves.each do |reserve| %>
-		<% a[i] = reserve.date %>
-		<% i = i + 1 %>
-	<% end %>
+	<h3> <span class="badge badge-light"> Residencia: <%= @residence.name %> </span> </h3>
+
+	<div class="form-group invisible">
+		<%= r.select :user_id, [[current_user.name, current_user.id]] %>
+	</div>
+	
 	<div class="form-group">
 		<%= week_field("reserve", "date", options = { min: Date.today + 180, max: Date.today + 250 } ) %>
 	</div>
