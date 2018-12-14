@@ -28,12 +28,14 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	validate tarjeta
+	validate :tarjeta
+
 	def tarjeta
 	if card.digits.length !=16
 		errors.add(:base, 'El numero de la tarjeta debe tener 16 digitos')
 	end
 	end
+	
 	validate :vencida
 	def vencida
 		now = Time.now.utc.to_date
