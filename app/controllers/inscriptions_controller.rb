@@ -1,4 +1,5 @@
 class InscriptionsController < ApplicationController
+    private
     def new
 		@residence = Residence.find(params[:id])
 		@inscription = Inscription.new
@@ -13,6 +14,4 @@ class InscriptionsController < ApplicationController
 			redirect_to residences_path, notice: "ERROR ya esta inscripto en esa subasta"
 		end
   end
-    
-    private
-end
+

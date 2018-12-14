@@ -1,5 +1,5 @@
 class BidsController < ApplicationController
-  def new
+  	def new
 		@auction = Auction.find(params[:id])
 		@bid = Bid.new
 	end
@@ -13,5 +13,5 @@ class BidsController < ApplicationController
 		else
 			redirect_to root_path, notice: "ERROR al producir la puja"
 		end
-  end
+  	end
 end
