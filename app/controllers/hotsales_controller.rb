@@ -13,13 +13,14 @@ class HotsalesController < ApplicationController
 	def create
 	
 		@hotsale = Hotsale.new(params.require(:hotsale).permit(:price, :date, :residence_id, :description))
-
-		if @hotsale.save
-			redirect_to root_path, notice: 'Se creo el Hot Sale correctamente'
-		else
+		if Reserve.where(residence: @hotsale.residence_id, date: @hotsale.date).exists?
 			redirect_to new_hotsale_path, notice: 'Ya hay un Hot Sale para esa residencia en esa fecha'
-		end
 
+		else
+			@hotsale.save
+			redirect_to root_path, notice: 'Se creo el Hot Sale correctamente'
+		
+		end	
 	end
 
 	def destroy
