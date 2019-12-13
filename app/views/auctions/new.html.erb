@@ -3,12 +3,12 @@
 <%= form_for @auction do |a| %>
 	<div class="form-group">
 		<%= a.label :date, 'Fecha a subastar' %>
-		<%= week_field("auction", "date", min: Date.today + 180, max: Date.today + 250) %>
+		<%= week_field("auction", "date", min: Date.today + 180, max: Date.today + 250, required: true) %>
 	</div>
 
 	<div class="form-group">
 		<%= a.label :startDate, 'Fecha de inicio de la subasta' %>
-		<%= date_field("auction", "startDate", min: Date.today, max: Date.today + 179) %>
+		<%= date_field("auction", "startDate", min: Date.today, max: Date.today + 179, required: true) %>
 	</div>
 
 	<div class="form-group">

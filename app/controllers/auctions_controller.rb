@@ -20,11 +20,19 @@ class AuctionsController < ApplicationController
 	def endAuction
 		@auction = Auction.find(params[:id])
 
-		user = User.find(@auction.user_id)
-		if user.credits > 0
-			redirect_to destroyAuction_path(id: @auction.id)
+		if @auction.bids.size != 0
+			b = @auction.bids.first
+			user = User.find(@auction.user_id)
+			if user.credits > 0
+				redirect_to destroyAuction_path(id: @auction.id)
+			else
+				win = @auction.bids.where("price < #{b.price}").first
+				b.destroy
+				@auction.update(user_id: win.user_id)
+				redirect_to endAuction_path(id: @auction.id)
+			end
 		else
-			redirect_to auction_path(id: @auction.id), notice: 'El usuario no tiene créditos para efectuar la reserva'
+			redirect_to withoutWinner_path(id: @auction.id)
 		end
 	end
 
@@ -37,6 +45,16 @@ class AuctionsController < ApplicationController
 			r = Reserve.new(user_id: user.id, residence_id: auction.residence_id, date: auction.date.to_date)
 			r.save
 			redirect_to root_path, notice: 'La subasta fue finalizada correctamente'
+		else
+			redirect_to auction_path(id: @auction.id), notice: 'ERROR: No pudo finalizar la subasta correctamente'
+		end
+	end
+
+	def withoutWinner
+		auction = Auction.find(params[:id])
+
+		if auction.destroy
+			redirect_to root_path, notice: "La subasta fue finalizada correctamente pero no hubo un ganador"
 		else
 			redirect_to auction_path(id: @auction.id), notice: 'ERROR: No pudo finalizar la subasta correctamente'
 		end
