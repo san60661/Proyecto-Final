@@ -1,4 +1,12 @@
 class AuctionsController < ApplicationController
+	def index
+		if current_user.admin == true
+			@auctions = Auction.all
+		else
+			@auctions = current_user.inscriptions
+		end
+	end
+
 	def new
 		@auction = Auction.new #crea formulario de una nueva subasta
 	end

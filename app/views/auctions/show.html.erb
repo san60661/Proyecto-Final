@@ -33,21 +33,9 @@
 	</div>
 
 	<% if @auction.inscriptions.size != 0 %>
-		<h3> <%= "Listado de usuarios inscriptos" %> </h3>
-		<table class="table table-striped table-secondary">
-  		<thead>
-    		<tr>
-      			<th scope="col">Nombre</th>
-    		</tr>
-  		</thead>
-  		<tbody>
-  			<% @auction.inscriptions.each do |inscription| %>
-    			<tr>
-      				<td><%=User.find(inscription.user_id).name %> </td>
-    			</tr>
-    		<% end %>
-  		</tbody>
-		</table>
+		<div class="p-3 mb-2 bg-secondary text-white".bg-secondary>
+			<h3> <%= "Cantidad de usuarios inscriptos: #{@auction.inscriptions.size}" %> </h3>
+		</div>
 	<% end %>
 </body>
 <body style="background-color:#A9CBBC;"> <!-- color de fondo -->
