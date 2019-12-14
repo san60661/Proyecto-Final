@@ -1,4 +1,5 @@
 <% @residences.each do |residence| %>
+<% if residence.locked != true %>
     <tr>
     <td><%=residence.name %> </td>
     <td><%=residence.description %></td>
@@ -21,4 +22,5 @@
         <% end %>
     <% end %>
 </tr>
+<% end %>
 <% end %>
